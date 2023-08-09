@@ -1,9 +1,17 @@
 import React from "react";
-import { View, Text, SafeAreaView, StatusBar, TextInput } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import * as Icon from "react-native-feather";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StatusBar,
+  TextInput,
+  ScrollView,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
+import Categories from "../components/Categories";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -49,6 +57,14 @@ const HomeScreen = () => {
             />
           </View>
         </View>
+
+        {/* main */}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 20 }}
+        >
+          <Categories />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
