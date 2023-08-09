@@ -12,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
 import Categories from "../components/Categories";
+import Featured from "../components/Featured";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -61,9 +62,10 @@ const HomeScreen = () => {
         {/* main */}
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 20 }}
+          contentContainerStyle={{ paddingBottom: 200 }}
         >
           <Categories />
+          <Featured />
         </ScrollView>
       </View>
     </SafeAreaView>
