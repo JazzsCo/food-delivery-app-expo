@@ -24,7 +24,7 @@ const RestaurantScreen = () => {
 
   return (
     <SafeAreaView>
-      <View className="relative">
+      <ScrollView className="relative">
         <ImageBackground source={item.image} className="w-full h-[75%]" />
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -32,6 +32,15 @@ const RestaurantScreen = () => {
           className="absolute p-2 rounded-full shadow top-2 left-2"
         >
           <Icon.ArrowLeft strokeWidth={4} stroke={"white"} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{ backgroundColor: themeColors.bgColor(2) }}
+          className="absolute p-2 rounded-full shadow w-full h-4 bottom-2"
+        >
+          <View>
+            <Text className="text-lg font-semibold">Hello</Text>
+          </View>
         </TouchableOpacity>
         <View className="absolute top-2/4 w-full pt-6 px-3 bg-white rounded-t-3xl">
           <Text className="text-2xl font-semibold">{item.name}</Text>
@@ -58,11 +67,12 @@ const RestaurantScreen = () => {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingBottom: 200 }}
             className="mt-3"
+            style={{ overflow: "visible" }}
           >
-            <Menus {...item} />
+            <Menus key={item.id} {...item} />
           </ScrollView>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
