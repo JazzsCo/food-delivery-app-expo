@@ -6,7 +6,11 @@ import { themeColors } from "../theme";
 
 const Menus = ({ dishes }) => {
   return (
-    <View>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      className="overflow-y-visible py-1"
+      contentContainerStyle={{ paddingBottom: 30 }}
+    >
       {dishes.map(({ id, name, description, price, image }) => (
         <View
           key={id}
@@ -42,7 +46,7 @@ const Menus = ({ dishes }) => {
           </View>
         </View>
       ))}
-    </View>
+    </ScrollView>
   );
 };
 

@@ -62,7 +62,7 @@ const HomeScreen = () => {
         {/* main */}
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 200 }}
+          contentContainerStyle={{ paddingBottom: 150 }}
         >
           <Categories />
           <Featured />
