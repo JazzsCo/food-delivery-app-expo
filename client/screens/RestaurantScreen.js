@@ -11,7 +11,8 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import * as Icon from "react-native-feather";
 
 import { themeColors } from "../theme";
-import Menus from "../components/Menus";
+import Menu from "../components/Menu";
+import BucketButton from "../components/BucketButton";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
@@ -54,9 +55,10 @@ const RestaurantScreen = () => {
           </View>
           <Text className="text-2xl font-semibold mt-3 mb-1">Menus</Text>
           <View className="mx-1">
-            <Menus key={item.id} {...item} />
+            <Menu key={item.id} {...item} />
           </View>
         </View>
+        <BucketButton />
       </View>
     </SafeAreaView>
   );
