@@ -37,27 +37,21 @@ const RestaurantCard = ({ restaurants }) => {
             <Image source={item.image} className="h-36 w-60 rounded-t-xl" />
 
             <View className="px-3 pb-4 space-y-2">
-              <Text className="font-bold pt-2">{item.name}</Text>
+              <Text className="font-medium pt-2">{item.name}</Text>
               <View className="flex-row items-center space-x-1">
                 <Image
                   source={require("../assets/images/fullStar.png")}
                   className="h-4 w-4"
                 />
-                <Text className="text-xs">
+                <Text className="text-sm text-gray-700">
                   <Text className="text-green-700">{item.stars}</Text>
-                  <Text className="text-xs text-gray-500">
-                    {" "}
-                    ({item.reviews} review)
-                  </Text>{" "}
-                  ·{" "}
-                  <Text className="font-semibold text-xs text-gray-500">
-                    {item.category}
-                  </Text>
+                  <Text> ({item.reviews} review)</Text> ·{" "}
+                  <Text className="font-medium">{item.category}</Text>
                 </Text>
               </View>
               <View className="flex-row items-center space-x-1">
                 <Icon.MapPin color="gray" width={15} height={15} />
-                <Text className="text-xs text-gray-500">
+                <Text className="text-sm text-gray-500">
                   {" "}
                   Nearby · {item.address}
                 </Text>

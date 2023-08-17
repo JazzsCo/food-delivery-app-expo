@@ -29,7 +29,7 @@ const Categories = () => {
           </TouchableOpacity>
           <Text
             style={{ fontWeight: id === activeColor ? "700" : "normal" }}
-            className={"text-gray-500 text-xs"}
+            className={"text-gray-700 text-sm"}
           >
             {name}
           </Text>

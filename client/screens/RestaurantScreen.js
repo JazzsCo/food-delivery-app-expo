@@ -12,7 +12,7 @@ import * as Icon from "react-native-feather";
 
 import { themeColors } from "../theme";
 import Menu from "../components/Menu";
-import BucketButton from "../components/BucketButton";
+import BasketButton from "../components/BasketButton";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
@@ -34,7 +34,7 @@ const RestaurantScreen = () => {
           <Icon.ArrowLeft strokeWidth={4} stroke={"white"} />
         </TouchableOpacity>
         <View className="absolute top-2/4 w-full h-full pt-6 px-3 bg-white rounded-t-3xl">
-          <Text className="text-2xl font-semibold">{item.name}</Text>
+          <Text className="text-2xl font-medium">{item.name}</Text>
           <View className="mt-2 flex-row items-center space-x-1">
             <Image
               source={require("../assets/images/fullStar.png")}
@@ -53,12 +53,12 @@ const RestaurantScreen = () => {
               </Text>
             </View>
           </View>
-          <Text className="text-2xl font-semibold mt-3 mb-1">Menus</Text>
+          <Text className="text-2xl font-medium mt-3 mb-1">Menus</Text>
           <View className="mx-1">
             <Menu key={item.id} {...item} />
           </View>
         </View>
-        <BucketButton />
+        <BasketButton />
       </View>
     </SafeAreaView>
   );

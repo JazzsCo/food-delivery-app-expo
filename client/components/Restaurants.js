@@ -12,8 +12,8 @@ const Restaurants = () => {
         <View key={index}>
           <View className="px-2 py-2 flex-row justify-between items-center">
             <View>
-              <Text className="font-semibold">{item.title}</Text>
-              <Text className="text-xs text-gray-500">{item.description}</Text>
+              <Text className="font-medium text-lg">{item.title}</Text>
+              <Text className="text-sm text-gray-700">{item.description}</Text>
             </View>
             <TouchableOpacity>
               <Text

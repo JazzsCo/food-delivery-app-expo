@@ -34,13 +34,16 @@ const HomeScreen = () => {
             className="flex-row flex-1 items-center p-2 border-[1.5px] rounded-xl"
           >
             <Icon.Search width={20} height={20} stroke={themeColors.text} />
-            <TextInput placeholder="Restaurant" className="ml-2 flex-1" />
+            <TextInput
+              placeholder="Restaurant"
+              className="ml-2 flex-1 text-base"
+            />
             <View
               style={{ borderColor: themeColors.text }}
               className="flex-row items-center space-x-1 border-l-2 pl-1"
             >
               <Icon.MapPin width={18} height={18} stroke={themeColors.text} />
-              <Text className="text-gray-500">New York, NYC</Text>
+              <Text className="text-base text-gray-700">New York, NYC</Text>
             </View>
           </View>
           <View
