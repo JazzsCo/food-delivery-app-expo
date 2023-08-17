@@ -33,15 +33,6 @@ const RestaurantScreen = () => {
         >
           <Icon.ArrowLeft strokeWidth={4} stroke={"white"} />
         </TouchableOpacity>
-        {/* <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ backgroundColor: themeColors.bgColor(2) }}
-          className="absolute p-2 rounded-full shadow w-full h-4 bottom-2"
-        >
-          <View>
-            <Text className="text-lg font-semibold">Hello</Text>
-          </View>
-        </TouchableOpacity> */}
         <View className="absolute top-2/4 w-full h-full pt-6 px-3 bg-white rounded-t-3xl">
           <Text className="text-2xl font-semibold">{item.name}</Text>
           <View className="mt-2 flex-row items-center space-x-1">
