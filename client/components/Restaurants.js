@@ -5,7 +5,7 @@ import { featured } from "../constants";
 import { themeColors } from "../theme";
 import RestaurantCard from "./RestaurantCard";
 
-const Featured = () => {
+const Restaurants = () => {
   return (
     <View className="mt-3">
       {[featured, featured, featured, featured].map((item, index) => (
@@ -31,4 +31,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default Restaurants;

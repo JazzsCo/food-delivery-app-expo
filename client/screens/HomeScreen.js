@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
 import Categories from "../components/Categories";
-import Featured from "../components/Featured";
+import Restaurants from "../components/Restaurants";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -65,7 +65,7 @@ const HomeScreen = () => {
           contentContainerStyle={{ paddingBottom: 150 }}
         >
           <Categories />
-          <Featured />
+          <Restaurants />
         </ScrollView>
       </View>
     </SafeAreaView>

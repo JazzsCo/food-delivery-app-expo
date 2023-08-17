@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
-  ScrollView,
   ImageBackground,
 } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
