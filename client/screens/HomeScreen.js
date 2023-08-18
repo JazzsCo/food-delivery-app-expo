@@ -8,20 +8,13 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
 import Categories from "../components/Categories";
 import Restaurants from "../components/Restaurants";
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
-
   const [activeColor, setActiveColor] = React.useState(false);
-
-  React.useLayoutEffect(() => {
-    navigation.setOptions({ headerShown: false });
-  }, []);
 
   return (
     <SafeAreaView className="bg-white">

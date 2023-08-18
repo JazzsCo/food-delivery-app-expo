@@ -18,10 +18,6 @@ const RestaurantScreen = () => {
   const navigation = useNavigation();
   const { params: item } = useRoute();
 
-  React.useLayoutEffect(() => {
-    navigation.setOptions({ headerShown: false });
-  }, []);
-
   return (
     <SafeAreaView>
       <View className="relative">
