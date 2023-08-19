@@ -16,9 +16,9 @@ const CartScreen = () => {
       <TouchableOpacity
         onPress={() => navigation.goBack()}
         style={{ backgroundColor: themeColors.bgColor(2) }}
-        className="absolute p-2 rounded-full shadow top-2 left-2"
+        className="absolute p-1 rounded-full shadow top-2 left-2"
       >
-        <Icon.ArrowLeft strokeWidth={4} stroke={"white"} />
+        <Icon.ArrowLeft strokeWidth={3} stroke={"white"} />
       </TouchableOpacity>
       <View className="flex items-center">
         <Text
