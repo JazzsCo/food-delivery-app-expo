@@ -29,7 +29,7 @@ const RestaurantScreen = () => {
         >
           <Icon.ArrowLeft strokeWidth={4} stroke={"white"} />
         </TouchableOpacity>
-        <View className="absolute top-2/4 w-full h-full pt-6 px-3 bg-white rounded-t-3xl">
+        <View className="absolute top-2/4 w-full h-full pt-6 px-3 bg-slate-100 rounded-t-3xl">
           <Text className="text-2xl font-medium">{item.name}</Text>
           <View className="mt-2 flex-row items-center space-x-1">
             <Image

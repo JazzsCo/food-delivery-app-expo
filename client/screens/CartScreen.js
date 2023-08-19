@@ -72,20 +72,18 @@ const CartScreen = () => {
                   {item.description}
                 </Text>
               </View>
-              <View>
-                <Text className="text-lg font-medium">$ {item.price}</Text>
-                <TouchableOpacity
-                  style={{ backgroundColor: themeColors.bgColor(2) }}
-                  className="mt-7 p-1 rounded-full "
-                >
-                  <Icon.Minus
-                    strokeWidth={2}
-                    width={20}
-                    height={20}
-                    stroke={"white"}
-                  />
-                </TouchableOpacity>
-              </View>
+              <Text className="text-lg font-medium mr-4">$ {item.price}</Text>
+              <TouchableOpacity
+                style={{ backgroundColor: themeColors.bgColor(2) }}
+                className="p-1 rounded-full "
+              >
+                <Icon.Minus
+                  strokeWidth={2}
+                  width={20}
+                  height={20}
+                  stroke={"white"}
+                />
+              </TouchableOpacity>
             </View>
           </View>
         ))}

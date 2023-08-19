@@ -21,7 +21,7 @@ const Categories = () => {
             style={{
               borderColor: themeColors.text,
               backgroundColor:
-                id === activeColor ? themeColors.bgColor(0.7) : "white",
+                id === activeColor ? themeColors.bgColor(0.7) : "#f3f1",
             }}
             className={"rounded-full border shadow-xl p-1"}
           >

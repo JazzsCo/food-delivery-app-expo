@@ -14,7 +14,7 @@ const Menu = ({ dishes }) => {
       {dishes.map(({ id, name, description, price, image }) => (
         <View
           key={id}
-          className="flex-row w-full p-3 rounded-xl shadow-3xl mb-3 bg-gray-200"
+          className="flex-row w-full p-3 rounded-xl shadow-2xl bg-white mb-3 bg-w"
         >
           <Image source={image} className="w-24 h-24 rounded-xl shadow" />
           <View className="ml-3 flex-1 space-y-1">
