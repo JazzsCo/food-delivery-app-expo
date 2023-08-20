@@ -5,6 +5,7 @@ import * as Icon from "react-native-feather";
 import { themeColors } from "../theme";
 import { useNavigation } from "@react-navigation/native";
 import { featured } from "../constants";
+import Total from "../components/Total";
 
 const CartScreen = () => {
   const navigation = useNavigation();
@@ -13,6 +14,7 @@ const CartScreen = () => {
 
   return (
     <View className="relative">
+      {/* Top Button */}
       <TouchableOpacity
         onPress={() => navigation.goBack()}
         style={{ backgroundColor: themeColors.bgColor(2) }}
@@ -32,6 +34,10 @@ const CartScreen = () => {
         </Text>
       </View>
 
+      <Total />
+      <Text>hello</Text>
+
+      {/* Menus */}
       <View className="mt-3 px-2 flex-row justify-between items-center">
         <Text
           style={{ color: themeColors.text }}
@@ -42,7 +48,10 @@ const CartScreen = () => {
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 10, marginHorizontal: 15 }}
+        contentContainerStyle={{
+          paddingBottom: 10,
+          marginHorizontal: 15,
+        }}
       >
         {item.dishes.map((item) => (
           <View
@@ -88,6 +97,8 @@ const CartScreen = () => {
           </View>
         ))}
       </ScrollView>
+
+      {/* Total */}
     </View>
   );
 };
