@@ -34,9 +34,6 @@ const CartScreen = () => {
         </Text>
       </View>
 
-      <Total />
-      <Text>hello</Text>
-
       {/* Menus */}
       <View className="mt-3 px-2 flex-row justify-between items-center">
         <Text
@@ -52,6 +49,7 @@ const CartScreen = () => {
           paddingBottom: 10,
           marginHorizontal: 15,
         }}
+        className="max-h-96"
       >
         {item.dishes.map((item) => (
           <View
@@ -99,6 +97,7 @@ const CartScreen = () => {
       </ScrollView>
 
       {/* Total */}
+      <Total />
     </View>
   );
 };
