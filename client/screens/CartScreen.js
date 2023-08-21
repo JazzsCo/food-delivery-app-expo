@@ -35,7 +35,7 @@ const CartScreen = () => {
       </View>
 
       {/* Menus */}
-      <View className="mt-3 px-2 flex-row justify-between items-center">
+      <View className="mt-3 mb-2 px-2 flex-row justify-between items-center">
         <Text
           style={{ color: themeColors.text }}
           className="text-2xl font-medium mt-3 mb-3"
@@ -46,7 +46,6 @@ const CartScreen = () => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingBottom: 10,
           marginHorizontal: 15,
         }}
         className="max-h-96"
