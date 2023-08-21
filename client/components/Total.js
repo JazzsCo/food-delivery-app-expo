@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import * as Icon from "react-native-feather";
 
 import { themeColors } from "../theme";
@@ -8,9 +8,30 @@ const Total = () => {
   return (
     <View className="relative">
       <View
-        style={{ backgroundColor: themeColors.bgColor(0.7) }}
-        className="absolute mt-4 top-24 w-full p-6 px-8 rounded-t-3xl space-y-4"
+        style={{ backgroundColor: themeColors.bgColor(0.6) }}
+        className="absolute top-6 w-full p-6 px-8 rounded-t-3xl space-y-4"
       >
+        {/* Delivery Time */}
+        <View className="flex-row">
+          <Image
+            source={require("../assets/images/bikeGuy.png")}
+            className="w-24 h-24 rounded-full"
+          />
+          <View className="flex justify-center items-start space-y-1 ml-2 mt-2">
+            <Text className="text-lg font-medium text-gray-800">
+              Deliver in 20-30 minutes
+            </Text>
+            <TouchableOpacity>
+              <Text
+                style={{ color: themeColors.text }}
+                className="font-medium text-lg"
+              >
+                Change
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
         <View className="flex-row justify-between">
           <Text className="text-gray-700">Subtotal</Text>
           <Text className="text-gray-700">$dd</Text>
