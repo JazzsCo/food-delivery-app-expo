@@ -38,13 +38,19 @@ const DeliveryScreen = () => {
       <View className="rounded-t-3xl -mt-12 p-5 bg-white border-t-gray-900">
         <View className="flex-row justify-between pt-4 px-2">
           <View>
-            <Text className="text-lg text-gray-700 font-semibold">
+            <Text
+              style={{ color: themeColors.text }}
+              className="text-lg text-gray-700 font-bold"
+            >
               Estimated Arrival
             </Text>
             <Text className="text-3xl font-extrabold text-gray-700">
               20-30 Minutes
             </Text>
-            <Text className="mt-2 text-gray-700 font-semibold">
+            <Text
+              style={{ color: themeColors.text }}
+              className="mt-1 text-gray-700 font-bold"
+            >
               Your Order is own its way
             </Text>
           </View>
@@ -65,7 +71,7 @@ const DeliveryScreen = () => {
             <Image
               style={{ backgroundColor: "rgba(255,255,255,0.4)" }}
               className="w-16 h-16 rounded-full"
-              source={require("../assets/images/deliveryGuy.png")}
+              source={require("../assets/images/deliveryGuy.jpg")}
             />
           </View>
 
