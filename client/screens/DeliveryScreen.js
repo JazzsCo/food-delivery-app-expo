@@ -55,7 +55,7 @@ const DeliveryScreen = () => {
             </Text>
           </View>
           <Image
-            className="h-24 w-24"
+            className="h-28 w-28"
             source={require("../assets/images/bikeGuy2.gif")}
           />
         </View>
