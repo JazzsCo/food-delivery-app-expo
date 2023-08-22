@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import * as Icon from "react-native-feather";
+import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
 
 const Total = () => {
+  const navigation = useNavigation();
   return (
     <View className="relative">
       <View
@@ -49,7 +50,7 @@ const Total = () => {
         <View>
           <TouchableOpacity
             style={{ backgroundColor: themeColors.bgColor(2) }}
-            // onPress={() => navigation.navigate("PreparingOrder")}
+            onPress={() => navigation.navigate("PreparingOrder")}
             className="p-4 rounded-full"
           >
             <Text className="text-white text-center font-bold text-lg">
