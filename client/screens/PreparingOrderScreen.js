@@ -14,13 +14,10 @@ const PreparingOrderScreen = () => {
   }, []);
 
   return (
-    <View
-      style={{ backgroundColor: themeColors.bgColor(1) }}
-      className="flex-1 items-center justify-center bg-white"
-    >
+    <View className="flex-1 items-center justify-center bg-white">
       <Image
         source={require("../assets/images/delivery.gif")}
-        className="w-36 h-36"
+        className="w-64 h-64"
       />
     </View>
   );
