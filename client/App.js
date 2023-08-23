@@ -9,35 +9,40 @@ import RestaurantScreen from "./screens/RestaurantScreen";
 import CartScreen from "./screens/CartScreen";
 import PreparingOrderScreen from "./screens/PreparingOrderScreen";
 import DeliveryScreen from "./screens/DeliveryScreen";
+import { Provider } from "react-redux";
+
+import { store } from "./store";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Restaurant" component={RestaurantScreen} />
-        <Stack.Screen
-          name="Cart"
-          options={{ presentation: "fullScreenModal" }}
-          component={CartScreen}
-        />
-        <Stack.Screen
-          name="PreparingOrder"
-          options={{ presentation: "fullScreenModal" }}
-          component={PreparingOrderScreen}
-        />
-        <Stack.Screen
-          name="Delivery"
-          options={{ presentation: "fullScreenModal" }}
-          component={DeliveryScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{ headerShown: false }}
+        >
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Restaurant" component={RestaurantScreen} />
+          <Stack.Screen
+            name="Cart"
+            options={{ presentation: "fullScreenModal" }}
+            component={CartScreen}
+          />
+          <Stack.Screen
+            name="PreparingOrder"
+            options={{ presentation: "fullScreenModal" }}
+            component={PreparingOrderScreen}
+          />
+          <Stack.Screen
+            name="Delivery"
+            options={{ presentation: "fullScreenModal" }}
+            component={DeliveryScreen}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
