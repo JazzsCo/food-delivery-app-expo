@@ -25,4 +25,7 @@ export const { addToCart, removeToCart, emptyCart } = cartSlice.actions;
 
 export const selectedCartItems = (state) => state.cart.items;
 
+export const selectedCartItemsById = (state, id) =>
+  state.filter((item) => item.id === id);
+
 export default cartSlice.reducer;

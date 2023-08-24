@@ -6,17 +6,26 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  ScrollView,
 } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as Icon from "react-native-feather";
+import { useDispatch } from "react-redux";
 
 import { themeColors } from "../theme";
 import Menu from "../components/Menu";
 import BasketButton from "../components/BasketButton";
+import { setRestaurant } from "../slices/restaurantSlice";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
   const { params: item } = useRoute();
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(setRestaurant(item));
+  }, []);
 
   return (
     <SafeAreaView>
@@ -51,7 +60,17 @@ const RestaurantScreen = () => {
           </View>
           <Text className="text-2xl font-medium mt-3 mb-1">Menus</Text>
           <View className="mx-1">
-            <Menu key={item.id} {...item} />
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              className="overflow-y-visible py-1"
+              contentContainerStyle={{
+                paddingBottom: 60,
+              }}
+            >
+              {item.dishes.map((item, index) => (
+                <Menu key={index} {...item} />
+              ))}
+            </ScrollView>
           </View>
         </View>
         <BasketButton />
