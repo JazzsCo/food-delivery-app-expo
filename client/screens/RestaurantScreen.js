@@ -25,7 +25,7 @@ const RestaurantScreen = () => {
 
   React.useEffect(() => {
     dispatch(setRestaurant(item));
-  }, []);
+  });
 
   return (
     <SafeAreaView>

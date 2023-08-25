@@ -50,28 +50,28 @@ export const featured = {
       dishes: [
         {
           id: 1,
-          name: "pizza",
+          name: "pizza1",
           description: "cheezy garlic pizza",
           price: 10,
           image: require("../assets/images/pizzaDish.png"),
         },
         {
           id: 2,
-          name: "pizza",
+          name: "pizza2",
           description: "cheezy garlic pizza",
           price: 10,
           image: require("../assets/images/pizzaDish.png"),
         },
         {
           id: 3,
-          name: "pizza",
+          name: "pizza3",
           description: "cheezy garlic pizza",
           price: 10,
           image: require("../assets/images/pizzaDish.png"),
         },
         {
           id: 4,
-          name: "pizza",
+          name: "pizza4",
           description: "cheezy garlic pizza",
           price: 10,
           image: require("../assets/images/pizzaDish.png"),
