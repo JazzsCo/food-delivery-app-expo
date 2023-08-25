@@ -10,12 +10,13 @@ import {
 } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as Icon from "react-native-feather";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { themeColors } from "../theme";
 import Menu from "../components/Menu";
 import BasketButton from "../components/BasketButton";
-import { setRestaurant } from "../slices/restaurantSlice";
+import { selectedRestaurant, setRestaurant } from "../slices/restaurantSlice";
+import { emptyCart } from "../slices/cartSlice";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
@@ -23,7 +24,13 @@ const RestaurantScreen = () => {
 
   const dispatch = useDispatch();
 
+  const restaurant = useSelector(selectedRestaurant);
+
   React.useEffect(() => {
+    if (restaurant && restaurant.id !== item.id) {
+      dispatch(emptyCart());
+    }
+
     dispatch(setRestaurant(item));
   });
 

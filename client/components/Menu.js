@@ -13,7 +13,7 @@ import {
 const Menu = (item) => {
   const dispatch = useDispatch();
 
-  const selectedCartItems = useSelector((state) =>
+  const cartItemsById = useSelector((state) =>
     selectedCartItemsById(state, item.id)
   );
 
@@ -36,7 +36,7 @@ const Menu = (item) => {
           <View className="flex-row space-x-2 mt-1">
             <TouchableOpacity
               onPress={() => handleDecrease()}
-              disabled={!selectedCartItems.length}
+              disabled={!cartItemsById.length}
               style={{ backgroundColor: themeColors.bgColor(2) }}
               className="p-1 rounded-full shadow"
             >
@@ -46,7 +46,7 @@ const Menu = (item) => {
               style={{ color: themeColors.text }}
               className="text-lg font-medium"
             >
-              {selectedCartItems.length}
+              {cartItemsById.length}
             </Text>
             <TouchableOpacity
               onPress={() => hendleIncrease()}
