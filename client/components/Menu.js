@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import * as Icon from "react-native-feather";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -13,7 +13,7 @@ import {
 const Menu = (item) => {
   const dispatch = useDispatch();
 
-  const cartItems = useSelector((state) =>
+  const selectedCartItems = useSelector((state) =>
     selectedCartItemsById(state, item.id)
   );
 
@@ -36,7 +36,7 @@ const Menu = (item) => {
           <View className="flex-row space-x-2 mt-1">
             <TouchableOpacity
               onPress={() => handleDecrease()}
-              disabled={!cartItems.length}
+              disabled={!selectedCartItems.length}
               style={{ backgroundColor: themeColors.bgColor(2) }}
               className="p-1 rounded-full shadow"
             >
@@ -46,7 +46,7 @@ const Menu = (item) => {
               style={{ color: themeColors.text }}
               className="text-lg font-medium"
             >
-              {cartItems.length}
+              {selectedCartItems.length}
             </Text>
             <TouchableOpacity
               onPress={() => hendleIncrease()}

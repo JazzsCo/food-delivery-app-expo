@@ -4,9 +4,13 @@ import * as Icon from "react-native-feather";
 import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
+import { useSelector } from "react-redux";
+import { selectedCartItemsPrice } from "../slices/cartSlice";
 
 const BasketButton = () => {
   const navigation = useNavigation();
+
+  const totalPrice = useSelector(selectedCartItemsPrice);
 
   return (
     <View className="flex-row justify-center">
@@ -23,7 +27,9 @@ const BasketButton = () => {
             height={35}
           />
           <Text className="text-gray-200 text-2xl font-medium">View Cart</Text>
-          <Text className="text-gray-200 text-2xl font-medium">$ 40</Text>
+          <Text className="text-gray-200 text-2xl font-medium">
+            $ {totalPrice}
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
