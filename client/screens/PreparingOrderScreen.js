@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Image } from "react-native";
 
-import { themeColors } from "../theme";
 import { useNavigation } from "@react-navigation/native";
 
 const PreparingOrderScreen = () => {

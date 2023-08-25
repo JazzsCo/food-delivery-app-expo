@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import * as Icon from "react-native-feather";
+import { useSelector } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
-import { useNavigation } from "@react-navigation/native";
 import Total from "../components/Total";
-import { useSelector } from "react-redux";
-import { selectedCartItems } from "../slices/cartSlice";
+import { selectedCartItems, selectedCartItemsById } from "../slices/cartSlice";
 import { selectedRestaurant } from "../slices/restaurantSlice";
 
 const CartScreen = () => {
@@ -14,6 +14,10 @@ const CartScreen = () => {
 
   const restaurant = useSelector(selectedRestaurant);
   const cartItems = useSelector(selectedCartItems);
+  // const cartItemsById = (id) =>
+  //   useSelector((state) => selectedCartItemsById(state, id));
+
+  // console.log(first);
 
   return (
     <View className="relative">
@@ -63,7 +67,7 @@ const CartScreen = () => {
                   style={{ color: themeColors.text }}
                   className="text-xl font-medium ml-1"
                 >
-                  2
+                  {/* {cartItemsById().length} */}0
                 </Text>
                 <Text
                   style={{ color: themeColors.text }}
@@ -84,7 +88,7 @@ const CartScreen = () => {
                 <Text className="text-lg font-medium mr-4">$ {item.price}</Text>
                 <TouchableOpacity
                   style={{ backgroundColor: themeColors.bgColor(2) }}
-                  className="p-1 rounded-full "
+                  className="p-1 rounded-full"
                 >
                   <Icon.Minus
                     strokeWidth={2}

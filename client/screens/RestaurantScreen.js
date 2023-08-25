@@ -71,7 +71,7 @@ const RestaurantScreen = () => {
               showsVerticalScrollIndicator={false}
               className="overflow-y-visible py-1"
               contentContainerStyle={{
-                paddingBottom: 60,
+                paddingBottom: 65,
               }}
             >
               {item.dishes.map((item, index) => (

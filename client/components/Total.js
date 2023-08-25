@@ -1,11 +1,18 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 
 import { themeColors } from "../theme";
+import { selectedCartItemsPrice } from "../slices/cartSlice";
 
 const Total = () => {
   const navigation = useNavigation();
+
+  const menuFee = useSelector(selectedCartItemsPrice);
+  const deliveryFee = 20;
+  const orderTotal = menuFee + deliveryFee;
+
   return (
     <View
       style={{ backgroundColor: themeColors.bgColor(0.6) }}
@@ -34,17 +41,19 @@ const Total = () => {
 
       <View className="flex-row justify-between">
         <Text className="text-gray-800 font-medium text-base">Menu Fee</Text>
-        <Text className="text-gray-800 font-medium text-base">$dd</Text>
+        <Text className="text-gray-800 font-medium text-base">$ {menuFee}</Text>
       </View>
       <View className="flex-row justify-between">
         <Text className="text-gray-800 font-medium text-base">
           Delivery Fee
         </Text>
-        <Text className="text-gray-800 font-medium text-base">$xx</Text>
+        <Text className="text-gray-800 font-medium text-base">
+          $ {deliveryFee}
+        </Text>
       </View>
       <View className="flex-row justify-between">
         <Text className="font-extrabold text-lg">Order Total</Text>
-        <Text className="font-extrabold text-base">$xx</Text>
+        <Text className="font-extrabold text-base">$ {orderTotal}</Text>
       </View>
       <View>
         <TouchableOpacity
