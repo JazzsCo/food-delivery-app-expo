@@ -1,23 +1,39 @@
 import React from "react";
 import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import * as Icon from "react-native-feather";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 
 import { themeColors } from "../theme";
 import Total from "../components/Total";
-import { selectedCartItems, selectedCartItemsById } from "../slices/cartSlice";
+import { removeToCart, selectedCartItems } from "../slices/cartSlice";
 import { selectedRestaurant } from "../slices/restaurantSlice";
 
 const CartScreen = () => {
   const navigation = useNavigation();
 
+  const dispatch = useDispatch();
   const restaurant = useSelector(selectedRestaurant);
   const cartItems = useSelector(selectedCartItems);
-  // const cartItemsById = (id) =>
-  //   useSelector((state) => selectedCartItemsById(state, id));
 
-  // console.log(first);
+  const handleDecrease = (item) => {
+    dispatch(removeToCart(item));
+  };
+
+  // duplicate, unduplicate objects and counts ==> I have this code from ChatGPT (main code)
+  const occurrences = [
+    ...cartItems.reduce((map, item) => {
+      const key = JSON.stringify(item);
+      map.set(key, (map.get(key) || 0) + 1);
+      return map;
+    }, new Map()),
+  ].map(([key, value]) => ({ item: JSON.parse(key), count: value }));
+
+  React.useEffect(() => {
+    if (!cartItems.length) {
+      navigation.goBack();
+    }
+  }, [cartItems.length]);
 
   return (
     <View className="relative">
@@ -57,7 +73,7 @@ const CartScreen = () => {
           }}
           className="max-h-96"
         >
-          {cartItems.map((item) => (
+          {occurrences.map(({ item, count }) => (
             <View
               key={item.id}
               className="rounded-xl shadow-xl bg-white p-3 mb-3 "
@@ -67,7 +83,7 @@ const CartScreen = () => {
                   style={{ color: themeColors.text }}
                   className="text-xl font-medium ml-1"
                 >
-                  {/* {cartItemsById().length} */}0
+                  {count}
                 </Text>
                 <Text
                   style={{ color: themeColors.text }}
@@ -87,6 +103,7 @@ const CartScreen = () => {
                 </View>
                 <Text className="text-lg font-medium mr-4">$ {item.price}</Text>
                 <TouchableOpacity
+                  onPress={() => handleDecrease(item)}
                   style={{ backgroundColor: themeColors.bgColor(2) }}
                   className="p-1 rounded-full"
                 >
