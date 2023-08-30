@@ -19,6 +19,7 @@ const Menu = (item) => {
 
   const hendleIncrease = () => {
     dispatch(addToCart(item));
+    // To Do Hello
   };
 
   const handleDecrease = () => {
