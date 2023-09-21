@@ -30,6 +30,7 @@ const pallete = [
     bgColor: (opacity) => `rgba(248, 113, 113, ${opacity})`,
   },
 ];
+
 export const themeColors = {
   ...pallete[0],
 };

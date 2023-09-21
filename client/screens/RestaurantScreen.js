@@ -32,7 +32,7 @@ const RestaurantScreen = () => {
     }
 
     dispatch(setRestaurant(item));
-  });
+  }, []);
 
   return (
     <SafeAreaView>
